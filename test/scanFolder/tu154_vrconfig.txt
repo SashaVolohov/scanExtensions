@@ -1,0 +1,429 @@
+A
+1100
+VRCONFIG
+
+################################
+#TELEPORT HOTSPOTS
+################################
+
+###############
+#
+# AABB left X_Left Y_Bottom Z_Back X_Right Y_Up Z_front - relative to aircraft's CG
+# PRESET_XYZ pilot_head_x pilot_head_y pilot_head_z = side pos, vert pos, long pos - relative to aircraft's CG
+# PRESET_PSI head turn right deg
+# PRESET_THE head pitch up
+# PRESET_PHI heat tilt right
+#
+#
+###############
+
+BEGIN_TELEPORT_HOTSPOT SITTING Pilot's Seat
+	AABB -0.8 -0.2 -21.4 -0.2 0.5 -20.8
+	PRESET_XYZ -0.5 0.46 -20.9
+	PRESET_PSI 0.0
+	PRESET_THE 0.0
+	PRESET_PHI 0.0
+END_TELEPORT_HOTSPOT
+
+BEGIN_TELEPORT_HOTSPOT SITTING CoPilot's Seat
+	AABB  0.2 -0.2 -21.4 0.8 0.5 -20.8
+	PRESET_XYZ 0.50 0.46 -20.9
+	PRESET_PSI 0.0
+	PRESET_THE 0.0
+	PRESET_PHI 0.0
+END_TELEPORT_HOTSPOT
+
+BEGIN_TELEPORT_HOTSPOT SITTING Navigator's Seat
+	AABB -0.3 -0.2 -20.6 0.3 0.5 -20.0
+	PRESET_XYZ 0.0 0.46 -20.5
+	PRESET_PSI 0.0
+	PRESET_THE 0.0
+	PRESET_PHI 0.0
+END_TELEPORT_HOTSPOT
+
+BEGIN_TELEPORT_HOTSPOT SITTING Engineer's Seat
+	AABB 0.0 -0.2 -19.9 0.6 0.5 -19.3
+	PRESET_XYZ 0.2 0.46 -19.7
+	PRESET_PSI 90
+	PRESET_THE 0.0
+	PRESET_PHI 0.0
+END_TELEPORT_HOTSPOT
+
+BEGIN_MANIP command_knob t154/bus27_sel1_up t154/bus27_sel1_dn 
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP command_knob t154/bus27_sel2_up t154/bus27_sel2_dn 
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP command_knob t154/bus36_sel_up t154/bus36_sel_dn
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP command_knob t154/bus115_sel4_up t154/bus115_sel4_dn 
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP command_knob t154/bus115_sel3_up t154/bus115_sel3_dn 
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP command_knob t154/bus115_sel2_up t154/bus115_sel2_dn 
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP command_knob t154/bus115_sel1_up t154/bus115_sel1_dn 
+	DEG_PER_ACTION 200
+END_MANIP
+
+
+BEGIN_MANIP command_knob tcas2000/r2_up tcas2000/r2_dn Transponder 1s
+	DEG_PER_ACTION 45
+END_MANIP
+
+BEGIN_MANIP command_knob tcas2000/r1_up tcas2000/r1_dn Transponder 10s
+	DEG_PER_ACTION 45
+END_MANIP
+
+BEGIN_MANIP command_knob tcas2000/l2_up tcas2000/l2_dn Transponder 100s
+	DEG_PER_ACTION 45
+END_MANIP
+
+BEGIN_MANIP command_knob tcas2000/l1_up tcas2000/l1_dn Transponder 1000s
+	DEG_PER_ACTION 45
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/transponder_mode 
+	ACTION axis_knob 0 6 1 sim/custom/switchers/ovhd/transponder_mode
+	DEG_PER_ACTION 45
+END_MANIP
+
+BEGIN_MANIP command_knob sim/radios/actv_nav1_coarse_up sim/radios/actv_nav1_coarse_down
+	DEG_PER_ACTION 30
+END_MANIP
+
+BEGIN_MANIP command_knob sim/radios/actv_nav1_fine_up sim/radios/actv_nav1_fine_down 
+	DEG_PER_ACTION 30
+END_MANIP
+
+BEGIN_MANIP command_knob sim/radios/actv_nav2_fine_up sim/radios/actv_nav2_fine_down 
+	DEG_PER_ACTION 30
+END_MANIP
+
+BEGIN_MANIP command_knob sim/radios/actv_nav2_coarse_up sim/radios/actv_nav2_coarse_down 
+	DEG_PER_ACTION 30
+END_MANIP
+
+
+BEGIN_MANIP command_knob t154/vhf/com1_coarse_up t154/vhf/com1_coarse_dn  
+	DEG_PER_ACTION 30
+END_MANIP
+
+BEGIN_MANIP command_knob t154/vhf/com1_fine_up t154/vhf/com1_fine_dn 
+	DEG_PER_ACTION 30
+END_MANIP
+
+BEGIN_MANIP command_knob t154/vhf/com2_coarse_up t154/vhf/com2_coarse_dn 
+	DEG_PER_ACTION 30
+END_MANIP
+
+BEGIN_MANIP command_knob t154/vhf/com2_fine_up t154/vhf/com2_fine_dn 
+	DEG_PER_ACTION 30
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/cockpit2/radios/actuators/nav_frequency_Mhz[4]
+	ACTION axis_knob 106.000000 118.000000 1 sim/cockpit2/radios/actuators/nav_frequency_Mhz[4]
+	DEG_PER_ACTION 40
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/cockpit2/radios/actuators/nav_frequency_khz[4]
+	ACTION axis_knob -5 100 5 sim/cockpit2/radios/actuators/nav_frequency_khz[4]
+	DEG_PER_ACTION 40
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/cockpit2/radios/actuators/nav_frequency_Mhz[5]
+	ACTION axis_knob 106.000000 118.000000 1 sim/cockpit2/radios/actuators/nav_frequency_Mhz[5]
+	DEG_PER_ACTION 40
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/cockpit2/radios/actuators/nav_frequency_khz[5]
+	ACTION axis_knob -5 100 5 sim/cockpit2/radios/actuators/nav_frequency_khz[5]
+	DEG_PER_ACTION 40
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/cockpit/radios/nav1_obs_degm 
+	ACTION axis_knob 0 365 1 sim/cockpit/radios/nav1_obs_degm 
+	DEG_PER_ACTION 10
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/cockpit/radios/nav2_obs_degm 
+	ACTION axis_knob 0 365 1 sim/cockpit/radios/nav2_obs_degm 
+	DEG_PER_ACTION 10
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/gauges/compas/pkp_obs_knob_L
+	ACTION axis_knob -360 720 1 sim/custom/gauges/compas/pkp_obs_knob_L
+	DEG_PER_ACTION 5
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/gauges/compas/pkp_obs_knob_R
+	ACTION axis_knob -360 720 1 sim/custom/gauges/compas/pkp_obs_knob_R
+	DEG_PER_ACTION 5
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/gauges/compas/pkp_helper_course_L 
+	ACTION axis_knob -360 720 1 sim/custom/gauges/compas/pkp_helper_course_L 
+	DEG_PER_ACTION 5
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/gauges/compas/pkp_helper_course_R 
+	ACTION axis_knob -360 720 1 sim/custom/gauges/compas/pkp_helper_course_R 
+	DEG_PER_ACTION 5
+END_MANIP
+ 
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/ark_1_hundr_left
+	ACTION axis_knob -50 70 1 sim/custom/switchers/ovhd/ark_1_hundr_left
+	DEG_PER_ACTION 60
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/ark_1_ones_left 
+	ACTION axis_knob -50 60 1 sim/custom/switchers/ovhd/ark_1_ones_left 
+	DEG_PER_ACTION 60
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/ark_2_hundr_left
+	ACTION axis_knob -50 70 1 sim/custom/switchers/ovhd/ark_2_hundr_left
+	DEG_PER_ACTION 60
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/ark_2_ones_left 
+	ACTION axis_knob -50 60 1 sim/custom/switchers/ovhd/ark_2_ones_left 
+	DEG_PER_ACTION 60
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/ark_1_hundr_right
+	ACTION axis_knob -50 70 1 sim/custom/switchers/ovhd/ark_1_hundr_right
+	DEG_PER_ACTION 60
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/ark_1_ones_right 
+	ACTION axis_knob -50 60 1 sim/custom/switchers/ovhd/ark_1_ones_right 
+	DEG_PER_ACTION 60
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/ark_2_hundr_right
+	ACTION axis_knob -50 70 1 sim/custom/switchers/ovhd/ark_2_hundr_right
+	DEG_PER_ACTION 60
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/ark_2_ones_right 
+	ACTION axis_knob -50 60 1 sim/custom/switchers/ovhd/ark_2_ones_right 
+	DEG_PER_ACTION 60
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/eng/fire_place_sel
+	ACTION axis_knob 0 4 1 sim/custom/switchers/eng/fire_place_sel
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/eng/fire_sensor_sel
+	ACTION axis_knob 0 6 1 sim/custom/switchers/eng/fire_sensor_sel
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co70_sqwk_1
+	ACTION axis_knob 0 7 1 sim/custom/co70_sqwk_1
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co70_sqwk_2
+	ACTION axis_knob 0 7 1 sim/custom/co70_sqwk_2
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co70_sqwk_3
+	ACTION axis_knob 0 7 1 sim/custom/co70_sqwk_3
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co70_sqwk_4
+	ACTION axis_knob 0 7 1 sim/custom/co70_sqwk_4
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co63_sqwk_1
+	ACTION axis_knob 0 7 1 sim/custom/co63_sqwk_1
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co63_sqwk_2
+	ACTION axis_knob 0 7 1 sim/custom/co63_sqwk_2
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co63_sqwk_3
+	ACTION axis_knob 0 7 1 sim/custom/co63_sqwk_3
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co63_sqwk_4
+	ACTION axis_knob 0 7 1 sim/custom/co63_sqwk_4
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co63_mode
+	ACTION axis_knob 0 2 1 sim/custom/co63_mode
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co70_mode
+	ACTION axis_knob 0 3 -1 sim/custom/co70_mode
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/ark_1_mode
+	ACTION axis_knob 0 3 1 sim/custom/switchers/ovhd/ark_1_mode
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/ovhd/ark_2_mode
+	ACTION axis_knob 0 3 1 sim/custom/switchers/ovhd/ark_2_mode
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/co63_mode2
+	ACTION axis_knob 0 3 -1 sim/custom/co63_mode2
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/buttons/ovhd/rsbn_ch_one
+	ACTION axis_knob 0 9 1 sim/custom/buttons/ovhd/rsbn_ch_one
+	DEG_PER_ACTION 300
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/buttons/ovhd/rsbn_ch_ten
+	ACTION axis_knob 0 4 1 sim/custom/buttons/ovhd/rsbn_ch_ten
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/mid_right_panel_int_set
+	ACTION axis_knob 0 10 1 sim/custom/lights/mid_right_panel_int_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/left_panel_int_set
+	ACTION axis_knob 0 10 1 sim/custom/lights/left_panel_int_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/left_panel_flood_set
+	ACTION axis_knob 0 1 0.1 sim/custom/lights/left_panel_flood_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/ovhd_front_panel_flood_set
+	ACTION axis_knob 0 1 0.1 sim/custom/lights/ovhd_front_panel_flood_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/front_panel_flood_set
+	ACTION axis_knob 0 1 0.1 sim/custom/lights/front_panel_flood_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/ovhd_back_panel_flood_set
+	ACTION axis_knob 0 1 0.1 sim/custom/lights/ovhd_back_panel_flood_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/mid_panel_flood_set
+	ACTION axis_knob 0 1 0.1 sim/custom/lights/mid_panel_flood_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/right_panel_flood_set
+	ACTION axis_knob 0 1 0.1 sim/custom/lights/right_panel_flood_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/right_panel_int_set
+	ACTION axis_knob 0 10 1 sim/custom/lights/right_panel_int_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/airbleed/ground_cond_on_cap
+	ACTION axis_knob 0 10 1 sim/custom/switchers/airbleed/ground_cond_on_cap
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/airbleed/skv_faster_work_cap
+	ACTION axis_knob 0 10 1 sim/custom/switchers/airbleed/skv_faster_work_cap
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/airbleed/cockpit_temp_set
+	ACTION axis_knob -10 40 1 sim/custom/switchers/airbleed/cockpit_temp_set
+	DEG_PER_ACTION 10
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/airbleed/cabin1_temp_set
+	ACTION axis_knob -10 40 1 sim/custom/switchers/airbleed/cabin1_temp_set
+	DEG_PER_ACTION 10
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/airbleed/cabin2_temp_set
+	ACTION axis_knob -10 40 1 sim/custom/switchers/airbleed/cabin2_temp_set
+	DEG_PER_ACTION 10
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/airbleed/left_sys_temp_set
+	ACTION axis_knob 5 40 1 sim/custom/switchers/airbleed/left_sys_temp_set
+	DEG_PER_ACTION 10
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/airbleed/right_sys_temp_set
+	ACTION axis_knob 5 40 1 sim/custom/switchers/airbleed/right_sys_temp_set
+	DEG_PER_ACTION 10
+END_MANIP
+
+
+BEGIN_MANIP drag_axis sim/custom/lights/eng_panel_flood_set
+	ACTION axis_knob 0 1 0.1 sim/custom/lights/eng_panel_flood_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/ard_panel_flood_set
+	ACTION axis_knob 0 1 0.1 sim/custom/lights/ard_panel_flood_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/ovhd_panel_int_set
+	ACTION axis_knob 0 10 1 sim/custom/lights/ovhd_panel_int_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/lights/mid_left_panel_int_set
+	ACTION axis_knob 0 10 1 sim/custom/lights/mid_left_panel_int_set
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/console/nvu_param_sel
+	ACTION axis_knob -4 4 1 sim/custom/switchers/console/nvu_param_sel
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/switchers/console/nvu_turn_sel
+	ACTION axis_knob -1 5 1 sim/custom/switchers/console/nvu_turn_sel
+	DEG_PER_ACTION 200
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/gauges/fuel/fuel_meter_mech
+	ACTION axis_knob 0 50000 100 sim/custom/gauges/fuel/fuel_meter_mech
+	DEG_PER_ACTION 5
+END_MANIP
+
+BEGIN_MANIP drag_axis sim/custom/rotary/ovhd/tks_lat_set
+	ACTION axis_knob -90 90 0.5 sim/custom/rotary/ovhd/tks_lat_set
+	DEG_PER_ACTION 10
+END_MANIP

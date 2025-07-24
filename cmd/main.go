@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/SashaVolohov/scanExtensions/internal/scan"
+	"golang.org/x/sync/errgroup"
 )
 
 type finalMap struct {
@@ -41,34 +42,36 @@ func main() {
 
 }
 
-func runScanWorkers(paths []string, maxGoroutines uint, finalMap *finalMap) {
+func runScanWorkers(paths []string, maxGoroutines uint, finalMap *finalMap) (err error) {
 
-	waitGroup := sync.WaitGroup{}
+	group := new(errgroup.Group)
 
 	for i := range paths {
-		waitGroup.Add(1)
 
-		go func() {
+		group.Go(func() error {
 			extensionScanner := scan.NewExtensionScanner(maxGoroutines)
 
 			extensionScanner.ScanFolder(paths[i])
 			scanMap, err := extensionScanner.GetScanMap()
 			if err != nil {
-				panic(err.Error())
+				return err
 			}
 
 			finalMap.Mutex.Lock()
 			defer func() {
 				finalMap.Mutex.Unlock()
-				waitGroup.Done()
 			}()
 
 			for key, value := range scanMap {
 				finalMap.ExtensionsCount[key] += value
 			}
-		}()
+
+			return nil
+
+		})
 
 	}
 
-	waitGroup.Wait()
+	err = group.Wait()
+	return
 }

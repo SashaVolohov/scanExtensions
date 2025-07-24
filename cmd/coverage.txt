@@ -1,0 +1,16 @@
+mode: set
+github.com/SashaVolohov/scanExtensions/cmd/main.go:23.13,25.33 1 0
+github.com/SashaVolohov/scanExtensions/cmd/main.go:25.33,29.3 3 0
+github.com/SashaVolohov/scanExtensions/cmd/main.go:31.2,37.39 5 0
+github.com/SashaVolohov/scanExtensions/cmd/main.go:37.39,39.3 1 0
+github.com/SashaVolohov/scanExtensions/cmd/main.go:41.2,41.60 1 0
+github.com/SashaVolohov/scanExtensions/cmd/main.go:45.89,49.23 2 1
+github.com/SashaVolohov/scanExtensions/cmd/main.go:49.23,51.25 1 1
+github.com/SashaVolohov/scanExtensions/cmd/main.go:51.25,56.18 4 1
+github.com/SashaVolohov/scanExtensions/cmd/main.go:56.18,58.5 1 1
+github.com/SashaVolohov/scanExtensions/cmd/main.go:60.4,61.17 2 1
+github.com/SashaVolohov/scanExtensions/cmd/main.go:61.17,63.5 1 1
+github.com/SashaVolohov/scanExtensions/cmd/main.go:65.4,65.36 1 1
+github.com/SashaVolohov/scanExtensions/cmd/main.go:65.36,67.5 1 1
+github.com/SashaVolohov/scanExtensions/cmd/main.go:69.4,69.14 1 1
+github.com/SashaVolohov/scanExtensions/cmd/main.go:75.2,76.8 2 1
