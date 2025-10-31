@@ -8,6 +8,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/SashaVolohov/scanExtensions"
 	"github.com/SashaVolohov/scanExtensions/internal/scan"
 	"golang.org/x/sync/errgroup"
 )
@@ -49,7 +50,7 @@ func runScanWorkers(paths []string, maxGoroutines uint, finalMap *finalMap) (err
 	for i := range paths {
 
 		group.Go(func() error {
-			extensionScanner := scan.NewExtensionScanner(maxGoroutines)
+			extensionScanner := scan.NewExtensionScanner(maxGoroutines, scanExtensions.OSInterface{})
 
 			extensionScanner.ScanFolder(paths[i])
 			scanMap, err := extensionScanner.GetScanMap()

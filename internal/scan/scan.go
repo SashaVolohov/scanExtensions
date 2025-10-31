@@ -15,6 +15,7 @@ const withoutFileExtension = 1
 type extensionScanner struct {
 	extensionsCount map[string]int
 	mutex           sync.Mutex
+	os              osInterface
 
 	done             chan struct{}
 	mainSemaphore    chan struct{}
@@ -24,8 +25,8 @@ type extensionScanner struct {
 	errMutex sync.Mutex
 }
 
-func NewExtensionScanner(maxGoroutines uint) *extensionScanner {
-	return &extensionScanner{extensionsCount: make(map[string]int), mutex: sync.Mutex{}, errMutex: sync.Mutex{}, done: make(chan struct{}), workersSemaphore: make(chan struct{}, maxGoroutines), mainSemaphore: make(chan struct{}, 1)}
+func NewExtensionScanner(maxGoroutines uint, osInterface osInterface) *extensionScanner {
+	return &extensionScanner{extensionsCount: make(map[string]int), mutex: sync.Mutex{}, errMutex: sync.Mutex{}, done: make(chan struct{}), workersSemaphore: make(chan struct{}, maxGoroutines), mainSemaphore: make(chan struct{}, 1), os: osInterface}
 }
 
 func (e *extensionScanner) checkExtension(path string) {
@@ -41,7 +42,7 @@ func (e *extensionScanner) checkExtension(path string) {
 }
 
 func (e *extensionScanner) readDir(path string) []os.DirEntry {
-	files, err := os.ReadDir(path)
+	files, err := e.os.ReadDir(path)
 	if err != nil {
 
 		e.errMutex.Lock()
